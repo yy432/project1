@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.claimemp.entity.Claim;
 import com.example.claimemp.entity.Employee;
 import com.example.claimemp.service.EmployeeService;
 
 // @ResponseBody + @Controller
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 public class EmployeeController {
 
