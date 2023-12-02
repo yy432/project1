@@ -1,0 +1,25 @@
+
+import {Link, Outlet} from 'react-router-dom'
+
+
+
+
+function Header(){
+
+
+  return (
+    <>
+    <h1>HR Connect</h1>
+    <nav>
+      <Link to="/employee">Create Profile</Link> | 
+       <Link to="/employee/view">Employee Record</Link> |
+       <Link to="/claim">Submit Claim</Link> | 
+       <Link to="/claim/view">Claim History</Link>
+    </nav>
+    <Outlet />
+    </>
+  )
+}
+
+
+export default Header;

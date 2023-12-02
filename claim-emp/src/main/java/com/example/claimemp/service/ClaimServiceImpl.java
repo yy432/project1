@@ -62,7 +62,7 @@ public class ClaimServiceImpl implements ClaimService {
     claimUpdated.setClaimDate(claim.getClaimDate());
     claimUpdated.setClaimAmount(claim.getClaimAmount());
     claimUpdated.setRemarks(claim.getRemarks());
-    return claimUpdated;
+    return claimRepository.save(claimUpdated);
   } 
 
   @Override

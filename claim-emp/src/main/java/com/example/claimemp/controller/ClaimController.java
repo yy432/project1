@@ -55,9 +55,9 @@ private ClaimService claimService;
 
    // Update
   @PutMapping("/{id}")
-  public ResponseEntity<Claim> updateInteraction(@PathVariable int id, @RequestBody Claim claim) {
+  public ResponseEntity<Claim> updateClaim(@PathVariable int id, @RequestBody Claim claim) {
     Claim updatedClaim = claimService.updateClaim(id, claim);
-    return new ResponseEntity<>(updatedClaim, HttpStatus.OK);
+    return new ResponseEntity<Claim>(updatedClaim, HttpStatus.OK);
   }  
 
   //Delete
