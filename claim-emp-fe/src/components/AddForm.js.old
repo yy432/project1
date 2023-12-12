@@ -1,0 +1,91 @@
+import { useState, useContext } from "react";
+import EmployeeContext from '../contexts/EmployeeContext';
+import Form from 'react-bootstrap/Form';
+
+
+function AddForm() {
+
+
+  const [item, setItem] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    department: "",
+  })
+
+  const ctx = useContext(EmployeeContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    ctx.postEmployee(item);
+
+  };
+
+  const handleChange = (e) => {
+    setItem((prevItem) => {
+
+      return {
+        ...prevItem,
+        [e.target.name]: e.target.value
+      };
+
+    });
+  };
+
+  return (
+    {/* <Form onSubmit={handleSubmit}>
+
+        <Form.Group className="mb-3" >
+          <Form.Label>First Name</Form.Label>
+          <Form.Control type="name" placeholder="First Name" onChange={handleChange} value={item.firstName} />
+        </Form.Group>
+
+        <Form.Group className="mb-3" >
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control type="name" placeholder="Last Name" onChange={handleChange} value={item.lastName} />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" onChange={handleChange} value={item.email} />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Department</Form.Label>
+          <Form.Control type="name" placeholder="Department" onChange={handleChange} value={item.department} />
+        </Form.Group>
+
+
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form> */}
+
+    < div className = "form-group" >
+      <form onSubmit={handleSubmit}>
+        <div className="input-align">
+          <div className="form-lab">
+            <label className="form-label">First Name:</label>
+          </div>
+          <input name="firstName" type="text" placeholder="First Name" onChange={handleChange} value={item.firstName} className="form-control" />
+        </div>
+        <br />
+        <label>Last Name:</label>
+        <input name="lastName" type="text" placeholder="Last Name" onChange={handleChange} value={item.lastName} />
+        <br />
+        <br />
+        <label>Email:</label>
+        <input name="email" type="text" placeholder="Email" onChange={handleChange} value={item.email} />
+        <br />
+        <br />
+        <label>Department:</label>
+        <input name="department" type="text" placeholder="Department" onChange={handleChange} value={item.department} />
+        <br />
+        <br />
+        <button>Submit Employee</button>
+      </form>
+    </div >
+  );
+}
+
+export default AddForm

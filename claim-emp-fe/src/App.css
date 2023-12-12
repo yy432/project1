@@ -32,7 +32,65 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* input[type="text"],
+select {
+  width: 60%;
+  font-size: 20px;
+  justify-self: right;
+} */
+
+.input-align {
+  /* float: ; */
+  margin-left: 12%;
+  margin-left: 12%;
+  width: 75%;
+}
+
+
+.form-lab {
+  float: left;
+}
+
+
+
+.col-75 {
+  float: left;
+  width: 75%;
+}
+
+
+
+.row {
+  padding: 5px 0px;
+}
+
+.form-container {
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(241, 241, 241);
+  font-size: 20px;
+}
+
+.hr-logo {
+  /* width: 29px;
+  height: 100px; */
+  padding: 10px;
+  size-adjust: 50%;
+}
+
+.home-h2 {
+  float: left;
+  padding-left: 17%;
+}
+
+.home-body {
+  float: left;
+  padding-left: 17%;
 }

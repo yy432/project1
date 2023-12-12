@@ -5,14 +5,14 @@ import TableClaims from '../components/TableClaims';
 import EmployeeContext from '../contexts/EmployeeContext';
 
 
-function ViewClaim(){
+function ViewClaim() {
 
-  const ctx = useContext(EmployeeContext); 
+  const ctx = useContext(EmployeeContext);
 
-  useEffect(()=>{ 
+  useEffect(() => {
     ctx.getClaim();
-  },[])  
-  
+  }, [])
+
   // const claimGet = async () => {
   //   try{
   //   const response = await baseAPI.get('/claims');  
@@ -23,18 +23,18 @@ function ViewClaim(){
   //     console.log(error.message)
   //   }
   // };
-  
 
-    
+
+
   return (
-  <div>
+    <div>
       <div className={styles.sidebar}>
-        
-        <h2>Claim History</h2>
+
+        <h1>Claim History</h1>
         <TableClaims />
 
       </div>
-  </div>
+    </div>
   )
 
 }

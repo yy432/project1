@@ -5,24 +5,24 @@ import Table from '../components/Table';
 import EmployeeContext from '../contexts/EmployeeContext';
 
 
-function View(){
+function View() {
 
-  const ctx = useContext(EmployeeContext); 
+  const ctx = useContext(EmployeeContext);
+  const list = ctx.employee;
 
-  useEffect(()=>{ 
+  useEffect(() => {
     ctx.getEmployee();
-  },[])  
-  
-  return (
-  //<div className={styles.container}>
-  <div>
-      <div className={styles.sidebar}>
-        
-        <h2>View Employee</h2>
-        <Table />
+  }, [])
 
+  return (
+    //<div className={styles.container}>
+    <div>
+      <div >
+
+        <h1>View Employee</h1>
+        <Table />
       </div>
-  </div>
+    </div>
   )
 
 }
